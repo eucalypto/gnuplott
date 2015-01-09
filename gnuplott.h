@@ -10,8 +10,8 @@
 //      function with endoffunction();
 // iv)  repeat steps ii) and iii) for each function, that
 //      you want to plot
-//     !! It is vital that you don't forget to close the last function
-//     !! with endoffunction(); 
+//     !! It is vital that you don't forget to close the last 
+//     !! function with endoffunction(); 
 // v)   at last use the method plot() to plot all the stored data 
 
 
@@ -19,18 +19,20 @@
 #include <iostream>
 #include <vector>
 
-// NO using namespace std; otherwise std would be used in every file, in which
-// this header is included
+// NO using namespace std; otherwise std would be used in every file,
+// in which this header is included
 
 class gnuplott{
  public:
   gnuplott();
   
-  void addPoint(double, double); // add a data point to current function
+  void addPoint(double, double); // add a data point to current
+                                 // function
   
-  void endoffunction(); // closes current function, following data points
-                        // are added to next function to plot. The last 
-                        // function has always to be "ended"
+  void endoffunction(); // closes current function, following data
+                        // points are added to next function to
+                        // plot. The last function has always to be
+                        // "ended"
 
   void plot();  
 
@@ -41,10 +43,10 @@ class gnuplott{
 
   std::vector<int> steps;
 
-  // the x-values are stored in xvals. The y-values (function values) are
-  // stored in yvals. The functions are stored behind each other in 
-  // this vectors. steps stores the indices of the last datapoints of a
-  // function.
+  // the x-values are stored in xvals. The y-values (function values)
+  // are stored in yvals. The functions are stored behind each other
+  // in this vectors. steps stores the indices of the last datapoints
+  // of a function.
 
 };
 

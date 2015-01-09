@@ -49,7 +49,7 @@ gnuplott::plot(){
     plotting.append("\" with lines ");
     
     outfile.open( outfilestring.c_str() ); // open output file
-    //outfile << "plot \"-\" with lines" << endl;
+
 
     for (int j = steps[i]; j < (steps[i+1] - 1); j++)
       outfile << xvals[j] << " " << yvals[j] << endl;
@@ -59,7 +59,8 @@ gnuplott::plot(){
 
   }  // end of for (int i = 0; i < ( steps.size() -1 ); i++){
 
-  plotting.erase(5,1); // erase the first "," in "plot ,gnu101.txt with lines, .."
+  plotting.erase(5,1); // erase the first "," in "plot ,gnu101.txt with
+                       // lines, .."
 
   outfile.open("plotting.txt");
   outfile << plotting ;
@@ -74,82 +75,3 @@ gnuplott::plot(){
        << "run it with plotting.txt as input file" << endl;
 }
 
-
-
-
-/* // begin of old definition
-gnuplott::gnuplott(){
-  axisIsSet = false;
-}
-
-gnuplott::gnuplott(vector<double> axis){
-  storage_.push_back(axis);
-  axisIsSet = true;
-}
-
-void
-gnuplott::setaxis(vector<double> axis){
-  if (storage_.size() == 0){
-    storage_.push_back(axis);
-    axisIsSet = true;
-  }
-  else
-    cerr << "Error: an axis is already set!" << endl;
-}
-
-
-void
-gnuplott::addfunction(vector<double> vec){
-  if (axisIsSet)
-    storage_.push_back(vec);
-  else 
-    cerr << "Error: No axis set. Please set "
-            "axis before adding values!" << endl;
-}
-
-
-void
-gnuplott::plot(){
-  ofstream outfile;
-  outfile.open("gnuplott_output.txt"); // standard output file
-  
-  outfile << "plot ";
-  for (int i = 2; i <= storage_.size(); i++)
-    outfile << "\"-\" using 1:" << i << " with lines,\\" << endl;
-  
-  outfile << endl;
-
-  for (int i = 0; i < storage_[0].size(); i++){
-    for (int j = 0; j < storage_.size(); j++){
-      outfile << storage_[j][i] << " " ;
-    }
-    outfile << endl;
-  }
-
-  outfile.close();
-  outfile.clear();
-
-  system("gnuplot gnuplott_output.txt");
-
-}
-  
-*/ // end of old definiton
-
-
-/*
-void
-gnuplott::plot(){
-  ofstream outfile;
-  outfile.open("gnuplott_output.txt"); // standard output file
-  
-  outfile << "plot \"-\" with lines" << endl;
-
-  for (int i = 0; i < valsx_.size(); i++)
-    outfile << valsx_[i] << " " << valsy_[i] << endl;
-
-  outfile.close(); // close file
-  outfile.clear();
-  
-  system("gnuplot gnuplott_output.txt");
-}
-*/
