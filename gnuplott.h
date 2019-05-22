@@ -49,39 +49,3 @@ class gnuplott{
   // of a function.
 
 };
-
-
-
-
-
-
-
-
-
-
-
-/* // begin of old definition
-class gnuplott{
- public:
-  gnuplott();
-  gnuplott(std::vector<double>); // initialize plot-object with grid points in
-                                 // form of a vector
-  
-  void setaxis(std::vector<double>); // set the axis; just the grid points as a 
-                                     // vector
-
-  void addfunction(std::vector<double>);// add a vector to data:
-                        // with values being the values of a function at the 
-                        // grid points (axis), which was set first
-                        // you can add as many "functions" as you like
-  void plot();
-
-
- private:
-  std::vector<std::vector<double> > storage_;
-  bool axisIsSet;
-  
-};
-
-*/ // end of old definition
-  
